@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace  std;
+int prost(int x) {
+    int del,ost;
+    del=1;
+    ost=1;
+    while(ost!=0){
+        del=del+1;
+        ost=x%del;
+    }
+    cout<<del<<"\n";
+    if (del>=x/del){
+        if (x/del!=1) {
+            cout << (x / del);
+        }
+        return 0;
+    }
+    else {
+        prost((x / del));
+    }
+}
+
+int main(){
+    int a;
+    cin>>a;
+    prost(a);
+}
