@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+void des(string x,int i,int s,int len){
+    string g;
+    g=x[i];
+    s=s+atoi(g.c_str())*pow(2,i);
+    if (len==i){
+        cout<<s<<"\n";
+    }
+    else{
+        i=i+1;
+        des(x,i,s,len);
+    }
+}
+int main() {
+    string a,ne;
+    int b,n,j,sum;
+    b=0;
+    ne="";
+    sum=0;
+    cin>>a;
+    n=a.length()-1;
+    for(j=n;j>=0;j--){
+        ne=ne+a[j];
+    }
+    des(ne,b,sum,n);
+    return 0;
+}
